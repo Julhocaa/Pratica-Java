@@ -9,9 +9,9 @@
 ## Divulgações
 - quem estiver afim de trocar um conhecimento e fazer um contato ou ate mesmo iniciar um projeto minhas redes socias estarão aqui para a gente conversar e botar a mão na massa!!! 
 
-|Linkedin| Instagram   | Discord  |
+|Linkedin| GitHub  | Discord  |
 |-       |-            |-         |
-|https://www.linkedin.com/in/julio-nascimento-baa0612b8|https://www.instagram.com/juliosg_n/|https://discordapp.com/users/752794573583155210|
+|https://www.linkedin.com/in/julio-nascimento-baa0612b8|https://github.com/Julhocaa|https://discordapp.com/users/752794573583155210|
 
 
 
