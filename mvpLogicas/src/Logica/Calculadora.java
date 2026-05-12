@@ -33,9 +33,7 @@ public class Calculadora {
 
             }
 
-        }
-
-        while (opcao <= 0 || opcao > 4);
+        } while (opcao <= 0 || opcao > 4);
 
         double resultado = 0;
         double numeroUm = insercaoDados.nextDouble();
