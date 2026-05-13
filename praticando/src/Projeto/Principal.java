@@ -1,7 +1,9 @@
-package Logica;
+package Projeto;
 import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-public class CadastroLogin {
+public class Principal {
 
 
     //cadastro usuario
@@ -46,8 +48,6 @@ public class CadastroLogin {
 
            if(cadastrarLogar.login(usuarioLog, senhaLog)){
 
-               System.out.println("Bem vindo de voltar: "+usuarioLog+"!!!!!");
-
                 break;
            }else {
                System.out.println("seu usuario ou a senha estão incorretos... tente novamente porfavor");
@@ -62,6 +62,35 @@ public class CadastroLogin {
 
        }
             System.out.println("Bem vindo de voltar: "+usuarioLog+"!!!!!");
+
+       List<String> contador = new ArrayList<>();
+       Scanner numeroDigitado = new Scanner(System.in);
+
+       contador.add("Saque");
+       contador.add("Depostio");
+       contador.add("Extrato");
+       contador.add("usuario");
+       contador.add("senha");
+       contador.add("pix");
+
+       String digite;
+       do{
+
+           System.out.println("Qual serviço você ira utilizar hoje?");
+
+           System.out.println("Saque");
+           System.out.println("Deposito");
+           System.out.println("pix");
+           System.out.println("Extrato?");
+           System.out.println("Troca usuario ou senha");
+           System.out.println("Qual você escolheria?");
+           digite = numeroDigitado.nextLine();
+
+       }while(!contador.contains(digite));
+
+
+
+
     }
 
 }

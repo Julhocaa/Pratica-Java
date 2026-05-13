@@ -1,4 +1,4 @@
-package Logica;
+package Projeto;
 public class MoldeCL {
 
     //Atributos
@@ -16,9 +16,29 @@ public class MoldeCL {
 
     }
 
+    public MoldeCL(){
+
+    }
+
     public boolean login(String usuarioDigitado, String senhaDigitada){
 
         return this.usuario.equals(usuarioDigitado) && this.senha.equals(senhaDigitada);
 
     }
+
+    public String getUsuario(){
+        return usuario;
+
+    }
+
+    public void setUsuario(String usuario){
+
+        this.usuario = usuario;
+    }
+
+    public void setSenha(String senha){
+
+
+    }
 }
+
