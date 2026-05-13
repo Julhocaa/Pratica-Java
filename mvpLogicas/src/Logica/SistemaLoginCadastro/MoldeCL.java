@@ -1,4 +1,4 @@
-package Logica;
+package Logica.SistemaLoginCadastro;
 public class MoldeCL {
 
     //Atributos

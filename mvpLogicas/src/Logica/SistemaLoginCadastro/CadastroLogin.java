@@ -1,4 +1,4 @@
-package Logica;
+package Logica.SistemaLoginCadastro;
 import java.util.*;
 
 public class CadastroLogin {
