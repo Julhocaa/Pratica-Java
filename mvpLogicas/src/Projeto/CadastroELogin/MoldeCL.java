@@ -1,4 +1,4 @@
-package Projeto;
+package Projeto.CadastroELogin;
 public class MoldeCL {
 
     //Atributos
@@ -37,7 +37,7 @@ public class MoldeCL {
     }
 
     public void setSenha(String senha){
-
+        this.senha =senha;
 
     }
 }

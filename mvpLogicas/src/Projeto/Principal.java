@@ -1,4 +1,6 @@
 package Projeto;
+import Projeto.CadastroELogin.MoldeCL;
+
 import java.util.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -63,19 +65,23 @@ public class Principal {
         }
 
 
+        moldeContaBanco contaBanco = new moldeContaBanco(500);
+        String usuarioBanco = usuario;
+        System.out.println("Bem vindo de volta "+usuarioBanco);
 
-        moldeContaBanco contaBanco = new moldeContaBanco(200);
 
 
         List<String> contador = new ArrayList<>();
         Scanner numeroDigitado = new Scanner(System.in);
 
         contador.add("Saque");
-        contador.add("Depostio");
+        contador.add("Deposito");
         contador.add("Extrato");
         contador.add("usuario");
         contador.add("senha");
         contador.add("pix");
+
+
 
         String digite;
         do {
@@ -103,12 +109,26 @@ public class Principal {
                     System.out.println("Entre em contato com o banco para mais informações");
                     break;
                 }else{
-                    System.out.println("aguarde um momento ");
-                    System.out.println("valor de: " +quantiaSaque +"sacado com sucesso!!");
+                    System.out.println("aguarde um momento estamos contado suas cedulas.... ");
+                    System.out.println("valor de: " +quantiaSaque +" sacado com sucesso!!");
 
                 }
             case "Deposito":
 
+                System.out.println("quanto você quer depositar?");
+                double quantiaDeposito = valorDigitado.nextDouble();
+
+                if(quantiaDeposito>5000){
+                    System.out.println("Não aceitamos depostios maiores que 5000, por favor procurar um de nossos atendentes para fazer a verificação do seu caso");
+
+                }else if(quantiaDeposito<5000){
+                    System.out.println("Fazendo calculos das cedulas...");
+                        if(quantiaDeposito==4999){
+                            System.out.println("Tudo certo, agora você só podera fazer deposito mês que vem");
+                            return;
+                        }
+                    System.out.println("Tudo certo");
+                }
 
 
 
