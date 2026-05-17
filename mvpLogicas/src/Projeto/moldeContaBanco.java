@@ -18,10 +18,16 @@ public class moldeContaBanco extends MoldeCL {
 
     }
 
-    public double setSaldo(double saldoAntigo, double saldoNovo){
+    public double setSaldoSaque(double saldoAntigo, double saldoNovo){
         return this.saldo = saldoAntigo-saldoNovo;
+    }
+    public double setSaldoDepositoCorrente(double saldoAntigo, double saldoNovo){
+        return this.saldo=saldoAntigo + saldoNovo;
 
     }
+    public double setSaldoDepositoPoupanca(double saldoAntigo, double saldoNovo){
+        return saldoAntigo+saldoNovo;
 
+    }
 
 }

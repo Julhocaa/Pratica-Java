@@ -11,7 +11,7 @@ public class Principal {
     //cadastro usuario
     public static void main(String[] args) {
         Scanner loginUser = new Scanner(System.in);
-        System.out.println("Bem vindo ao Sistemas&Julios insira suas credencias por gentiliza");
+        System.out.println("Bem-vindo ao Sistema do Banco&Julios insira suas credencias por gentiliza pra estarmos fazendo seu cadastro");
 
         System.out.println("Nome de Usuario: ");
         String usuario = loginUser.nextLine();
@@ -75,8 +75,7 @@ public class Principal {
         contador.add("Deposito");
         contador.add("Extrato");
         contador.add("usuario");
-        contador.add("senha");
-        contador.add("pix");
+        contador.add("Alterar usuario ou senha");
         String digite;
 
 
@@ -88,20 +87,19 @@ public class Principal {
 
             System.out.println("Saque");
             System.out.println("Deposito");
-            System.out.println("Pix");
             System.out.println("Extrato?");
-            System.out.println("Troca usuario ou senha");
+            System.out.println("Alterar usuario ou senha");
             System.out.println("Digite");
             digite = numeroDigitado.nextLine();
         } while (!contador.contains(digite));
 
         Scanner valorDigitado = new Scanner(System.in);
-        double quantiaSaque = valorDigitado.nextDouble();
-        double quantiaDeposito = valorDigitado.nextDouble();
+
         switch (digite) {
 
             case "Saque":
                 System.out.println("digite o valor do saque: ");
+                double quantiaSaque = valorDigitado.nextDouble();
 
                 if (quantiaSaque > 1000) {
                     System.out.println("Entre em contato com o banco para mais informações");
@@ -110,25 +108,52 @@ public class Principal {
                     System.out.println("aguarde um momento estamos contado suas cedulas.... ");
                     System.out.println("valor de: " +quantiaSaque +" sacado com sucesso!!");
 
-                    double saldoAtualizado=contaBanco.setSaldo(500, quantiaSaque);
+                    double saldoAtualizado=contaBanco.setSaldoSaque(500, quantiaSaque);
                     System.out.println("Saldo atual: "+saldoAtualizado);
                 }
                 break;
             case "Deposito":
 
-                System.out.println("quanto você quer depositar?");
+                List<String>tiposDepositos = new ArrayList<>();
+                tiposDepositos.add("Conta corrente");
+                tiposDepositos.add("Conta Poupança");
+                Scanner sc = new Scanner(System.in);
+                String digiteTipoDeposito;
 
-                if(quantiaDeposito>5000){
-                    System.out.println("Não aceitamos depostios maiores que 5000, por favor procurar um de nossos atendentes para fazer a verificação do seu caso");
+                do {
 
-                }else if(quantiaDeposito<5000){
-                    System.out.println("Fazendo calculos das cedulas...");
-                        if(quantiaDeposito==4999){
-                            System.out.println("Tudo certo, agora você só podera fazer deposito mês que vem");
-                            return;
-                        }
-                    System.out.println("Tudo certo");
-                }
+
+                    System.out.println("Escolha qual tipo de deposito sera feito");
+
+                    System.out.println("Conta Corrente");
+                    System.out.println("Conta Poupança");
+                    digiteTipoDeposito = sc.nextLine();
+
+                    switch (digiteTipoDeposito){
+
+                        case "Conta Corrente":
+                            System.out.println("Insira a quantia a ser depositada em sua conta corrente");
+                            double quantiaDepositoCorrente = valorDigitado.nextDouble();
+                                        System.out.println("Tudo certo");
+                                        double saldoAtualizado = contaBanco.setSaldoDepositoCorrente(500,quantiaDepositoCorrente);
+                                        System.out.println("Agradecemos por escolher o Bancos&Julios!!");
+                            System.out.println("Saldo: "+saldoAtualizado);
+                            break;
+                        case "Conta Poupança":
+
+                            System.out.println("Insira a quantia a ser depositada em sua poupança");
+                            double quantiaDepositoPoupanca = valorDigitado.nextDouble();
+                            System.out.println("Tudo certo");
+                            double saldoAtualizadoPoupanca = contaBanco.setSaldoDepositoPoupanca(0,quantiaDepositoPoupanca);
+                            System.out.println("Agradecemos por escolher o Bancos&Julios!!");
+                            System.out.println("Saldo: "+saldoAtualizadoPoupanca);
+                            break;
+
+                    }
+                }while(!tiposDepositos.contains(digiteTipoDeposito));
+
+                break;
+            case "Extrato":
 
 
         }
