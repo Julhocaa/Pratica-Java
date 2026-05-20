@@ -77,6 +77,7 @@ public class Principal {
         contador.add("Saque");
         contador.add("Deposito");
         contador.add("Extrato");
+        contador.add("Conta");
         contador.add("Alterar usuario ou senha");
         contador.add("Sair");
         String digite;
@@ -159,19 +160,46 @@ public class Principal {
                     contaBanco.mostrarExtratoCorrente();
                     break;
 
+
+
+
                 case "Conta":
-                    Scanner usuarios = new Scanner(System.in);
                     List<String>conta = new ArrayList<>();
-
-                    conta.add("Troca Usuario");
-                    conta.add("Troca Senha");
-
-                    switch(usuarios){
+                    Scanner acaoDigitada = new Scanner(System.in);
+                    conta.add("Trocar Usuario");
+                    conta.add("Trocar Senha");
 
 
-                    String alterarUsuario = usuarios.nextLine();
-                    contaBanco.setUsuario(alterarUsuario);
-                }
+                    System.out.println("Trocar Usuario?");
+                    System.out.println("Trocar Senha?");
+                    String escolhaAcao = acaoDigitada.nextLine();
+
+
+                do{
+                    switch(escolhaAcao) {
+
+
+                        case "Trocar Usuario":
+
+                            Scanner usuarios = new Scanner(System.in);
+                            System.out.println("Insira seu novo Usuario");
+                            String alterarUsuario = usuarios.nextLine();
+                            contaBanco.setUsuario(alterarUsuario);
+                            System.out.println("Seu usuario é "+alterarUsuario);
+                            break;
+
+                        case "Trocar Senha":
+
+                            Scanner senhaNova = new Scanner(System.in);
+
+                            System.out.println("Insira sua nova senha");
+                            String insiraSenha = senhaNova.nextLine();
+                            System.out.println("Senha nova alterada");
+                            contaBanco.setSenha(insiraSenha);
+                            break;
+                    }
+
+                }while(!conta.contains(escolhaAcao));
 
                 case "Sair":
             }
